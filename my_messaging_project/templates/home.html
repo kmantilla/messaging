@@ -5,10 +5,11 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-    Hi {{ user.username }}!
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    Hi {{ user.email }}!
+    <p><a href="{% url 'account_logout' %}">Log Out</a></p>
 {% else %}
     <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a>
+    <p><a href="{% url 'account_login' %}">Log In</a></p>
+    <p><a href="{% url 'account_signup' %}">Sign Up</a></p>
 {% endif %}
 {% endblock %}

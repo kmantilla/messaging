@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <html lang="en">
+    <meta charset="UTF-8">
+    <title>Messaging app.</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="">
+    <style>
+    </style>
+    <script src=""></script>
+</head>
+<body>
+
+    <div class="">
+        <p>Message with swift.</p>
+        {% if user.is_authenticated %}
+            <p>Hi, {{ user.username }}.</p>
+            <p><a href="{% url 'logout' %}">logout</a></p>
+        {% endif %}
+        {% if not user.is_authenticated %}
+            <p><a href="{% url 'register' %}">sign up.</a></p>
+            <p><a href="{% url 'login' %}">login here</a></p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
